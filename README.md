@@ -18,7 +18,7 @@ URL
 
 ## Authors
 * Serach Schubert
-* Chana Marwick
+* C Marwick
 * Eta Miller
-* Esther Chaya Grosberg
+* E.C Grosberg
 
