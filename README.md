@@ -17,8 +17,9 @@ URL
 * AWS Lambda, API Gateway, DynamodDB
 
 ## Authors
-* S Schubert
-* Chana Marwick
+* S. Schubert
+* C. Marwick
 * E. Miller
-* Esther Chaya Grosberg
+* E.C Grosberg
+
 
