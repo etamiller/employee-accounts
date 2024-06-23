@@ -24,6 +24,9 @@ export function Layout() {
                     <li>
                         <Link to="/delete">Delete Employee Profile</Link>
                     </li>
+                    <li>
+                        <Link to="/contact">Contact Us</Link>
+                    </li>
                 </ul>
             </nav>
             </header>

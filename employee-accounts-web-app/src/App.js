@@ -7,6 +7,8 @@ import {Retrieve} from './pages/retrieve.jsx';
 import {Update} from './pages/update.jsx';
 import {Delete} from './pages/delete.jsx';
 import {Home} from './pages/home.jsx';
+import {Contact} from './pages/contact.jsx';
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
             <Route path="retrieve" element={<Retrieve />}/>
             <Route path="update" element={<Update />}/>
             <Route path="delete" element={<Delete />}/>
+            <Route path="delete" element={<Contact />}/>
           </Route>
          </Routes>
       </BrowserRouter>
