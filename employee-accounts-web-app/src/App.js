@@ -7,7 +7,7 @@ import {Retrieve} from './pages/retrieve.jsx';
 import {Update} from './pages/update.jsx';
 import {Delete} from './pages/delete.jsx';
 import {Home} from './pages/home.jsx';
-
+import 'bootstrap/dist/css/bootstrap.min.css';​
 
 function App() {
   return (
