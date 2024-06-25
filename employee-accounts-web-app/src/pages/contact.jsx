@@ -8,8 +8,9 @@ export function Contact() {
             <h1>Contact Us</h1>
             <Tabs
                 defaultActiveKey="profile"
-                id="uncontrolled-tab-example"
+                id="contact-tabs"
                 className="mb-3"
+                fill
                 >
                 <Tab eventKey="email" title="Email">
                     employees@accounts.net
