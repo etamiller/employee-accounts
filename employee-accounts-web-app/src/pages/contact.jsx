@@ -18,7 +18,7 @@ export function Contact() {
                 <Tab eventKey="phone" title="Phone" className="mt-5">
                     1-800-123-4567
                 </Tab>
-                <Tab eventKey="mail" title="Mail" className="mt-5">
+                <Tab eventKey="address" title="Address" className="mt-5">
                     111 Employee Dr <br></br>
                     Baltimore, MD 21209 <br></br>
                     USA
