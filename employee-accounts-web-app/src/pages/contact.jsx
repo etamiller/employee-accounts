@@ -5,20 +5,20 @@ import Tabs from 'react-bootstrap/Tabs';
 export function Contact() {
     return(
         <>
-            <h1>Contact Us</h1>
+            <h1 style={{marginTop: 3 + 'em'}}>Contact Us</h1>
             <Tabs
                 defaultActiveKey="profile"
                 id="contact-tabs"
-                className="mb-3"
+                className="mt-5"
                 fill
                 >
-                <Tab eventKey="email" title="Email">
+                <Tab eventKey="email" title="Email" className="mt-5">
                     employees@accounts.net
                 </Tab>
-                <Tab eventKey="phone" title="Phone">
+                <Tab eventKey="phone" title="Phone" className="mt-5">
                     1-800-123-4567
                 </Tab>
-                <Tab eventKey="mail" title="Mail" >
+                <Tab eventKey="mail" title="Mail" className="mt-5">
                     111 Employee Dr <br></br>
                     Baltimore, MD 21209 <br></br>
                     USA
