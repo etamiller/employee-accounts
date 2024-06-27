@@ -1,36 +1,28 @@
-import { Outlet, Link} from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.css';
+import { Outlet} from "react-router-dom"
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 export function Layout() {
     return(
         <>
-            <header>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/add">Add Employee Profile</Link>
-                    </li>
-                    <li>
-                        <Link to="/retrieve">View Employee Profile</Link>
-                    </li>
-                    <li>
-                        <Link to="/update">Update Employee Profile</Link>
-                    </li>
-                    <li>
-                        <Link to="/delete">Delete Employee Profile</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact Us</Link>
-                    </li>
-                </ul>
-            </nav>
-            </header>
-           <Outlet> </Outlet> 
+            <Navbar bg="primary" data-bs-theme="dark">
+                <Container>
+                    <Navbar.Brand href="/">Employee Accounts</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
+                        <Nav.Link href="/add">Add Employee Profile</Nav.Link>
+                        <Nav.Link href="/retrieve">View Employee Profile</Nav.Link>
+                        <Nav.Link href="/update">Update Employee Profile</Nav.Link>
+                        <Nav.Link href="/delete">Delete Employee Profile</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
+        <Outlet> </Outlet> 
         </>
-    )
+    );
 }
