@@ -10,16 +10,7 @@ import React, { useState, useEffect } from 'react';
 
 
 export function Home() {
-
-    // const [toggle, setToggle] = useState(false);
-    
-    // useEffect(() => {
-    //     const collapse = document.getElementById('collapseTarget');
-    //     const setCollapse = new Collapse(collapse, { toggle: false });
-    //     toggle ? setCollapse.hide() : setCollapse.show();
-    // }, [toggle]);
-
-    
+   
     return(
         <>
         <Alert>
