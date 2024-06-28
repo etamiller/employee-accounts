@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import {Layout} from './layout/layout.jsx';
 import {About} from './pages/about.jsx';
@@ -7,6 +8,7 @@ import {Retrieve} from './pages/retrieve.jsx';
 import {Update} from './pages/update.jsx';
 import {Delete} from './pages/delete.jsx';
 import {Home} from './pages/home.jsx';
+
 
 
 function App() {
