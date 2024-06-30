@@ -1,4 +1,4 @@
-import { Outlet, Link} from "react-router-dom"
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -9,13 +9,15 @@ import React, { useState, useEffect } from 'react';
 // import { Collapse } from 'bootstrap';
 
 
+
 export function Home() {
    
     return(
         <>
+
         <Alert>
             <h1>Welcome to Employee Accounts</h1>
-        {/* <Outlet> </Outlet>  */}
+ 
         </Alert>
         
         
@@ -97,3 +99,9 @@ export function Home() {
 
       </>
 )}
+
+
+        </>
+    )
+}
+
