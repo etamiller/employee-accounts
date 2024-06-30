@@ -6,8 +6,6 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 
 
-
-
 export function Retrieve() {
     var index = 0;
     const emp1 = {firstName: 'John', lastName: 'Doe', position: 'Engineer', phone: '123', email: 'jd@ourapp.net', index: index};
@@ -65,6 +63,7 @@ export function Retrieve() {
 
     return(
         <>
+
         <h2 className = 'mt-5'>View Employee Profiles</h2>
         <DropdownButton id="dropdown-employees" title="Select an Employee" className = 'mt-5'>
         {empsList.map((option) => (
@@ -93,6 +92,7 @@ export function Retrieve() {
             </Card.Body>
          </Card>
          </div>
+
 
         </>
 
