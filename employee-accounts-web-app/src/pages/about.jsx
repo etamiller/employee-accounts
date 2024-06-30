@@ -1,4 +1,3 @@
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -10,7 +9,7 @@ export function About() {
     return(
         <>
 
-            <Container >
+<Container >
                 <div class="title">
                     <Row className="mx-2">
                         <Col>          
@@ -64,6 +63,7 @@ export function About() {
   
 
 
+            
         </>
     )
 }
