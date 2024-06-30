@@ -1,6 +1,8 @@
+
 import { Accordion } from "react-bootstrap";
 import { Container, ListGroup, Button, Form } from 'react-bootstrap';
 import { useState } from "react";
+
 export function Update() {
 
     const list = [
@@ -30,6 +32,7 @@ export function Update() {
       
     return(
         <>
+
             <br/><h1>Update Employee Accounts</h1>
 
         <Accordion defaultActiveKey="" >
@@ -68,6 +71,7 @@ export function Update() {
                 </Accordion.Body>
             </Accordion.Item>
             </Accordion>
+
         </>
     )
 }
