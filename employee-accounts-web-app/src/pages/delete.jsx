@@ -6,9 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
 
-
-
-
 const initialList1 = [
     {
     id: 1,
@@ -159,4 +156,6 @@ const initialList1 = [
     );
 }  
  
+
+
 export default Delete;
