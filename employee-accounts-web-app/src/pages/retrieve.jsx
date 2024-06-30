@@ -1,5 +1,4 @@
 
-//Move the card next to the dropdown so it doesn't overlap
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -55,7 +54,7 @@ export function Retrieve() {
 
     const showBorder = () => {
         if (currentView != ''){
-        return ('1px solid green')
+        return ('1px solid blue')
         }
         else{
             return ('none')
