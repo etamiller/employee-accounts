@@ -1,10 +1,11 @@
-import { Outlet, Link} from "react-router-dom"
+
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
+
 
 
 
@@ -49,6 +50,7 @@ const initialList1 = [
    
     return(
         <>
+
        <Container>
         <Col style={{margin:'20px'}}>
             <Row style={{margin: '10px'}}>
@@ -151,7 +153,7 @@ const initialList1 = [
         </Col>
         </Container>
         
-        <Outlet> </Outlet>
+
         </>
  
     );
