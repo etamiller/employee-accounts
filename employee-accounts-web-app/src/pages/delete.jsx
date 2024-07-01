@@ -1,25 +1,11 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
 import React, { useState } from 'react';
->>>>>>> bbfd48e8 (changed accordion header to print employees name)
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-<<<<<<< HEAD
-import Button from 'react-bootstrap/Button'
-
-
-
-
-const initialList1 = [
-    {
-=======
 import Button from 'react-bootstrap/Button';
 const initialEmployees = [
   {
->>>>>>> bbfd48e8 (changed accordion header to print employees name)
     id: 1,
     firstName: 'John',
     lastName: 'Doe',
@@ -36,41 +22,22 @@ const initialEmployees = [
     location: 'Baltimore',
     phone: '4102345678',
     email: 'ssmith@gmail.com'
-<<<<<<< HEAD
-    }
-  ];
-
-  export function Delete() {
-    function removeEmployee1(id) {
-        const newList1 = initialList1.filter((item) => item.id !== id);
-   
-        setList1(newList1);
-    }
-    const [list1, setList1] = React.useState(initialList1);
-
-    function removeEmployee2(id) {
-        const newList2 = initialList2.filter((item) => item.id !== id);
-   
-        setList2(newList2);
-    }
-    const [list2, setList2] = React.useState(initialList2);
-   
-    return(
-        <>
-
-       <Container>
-        <Col style={{margin:'20px'}}>
-            <Row style={{margin: '10px'}}>
-            <Accordion defaultActiveKey={"0"}>
-            <Accordion.Item>
-                <Accordion.Header>Employee #1</Accordion.Header>
-=======
   }
 ];
 export function Delete() {
-  const [employees, setEmployees] = useState(initialEmployees);
+  const [employees, setEmployees] = useState(initialEmployees.map(emp => ({
+    ...emp,
+    isOpen: false  // New state to manage accordion open/close state
+  })));
   const removeEmployee = (id) => {
     const updatedEmployees = employees.filter((emp) => emp.id !== id);
+    setEmployees(updatedEmployees);
+  };
+  const toggleAccordion = (id) => {
+    const updatedEmployees = employees.map((emp) => ({
+      ...emp,
+      isOpen: emp.id === id ? !emp.isOpen : emp.isOpen
+    }));
     setEmployees(updatedEmployees);
   };
   return (
@@ -78,12 +45,13 @@ export function Delete() {
       {employees.map((employee) => (
         <Col key={employee.id} style={{ margin: '20px' }}>
           <Row style={{ margin: '10px' }}>
-            <Accordion defaultActiveKey="0">
-              <Accordion.Item>
-                <Accordion.Header>{employee.lastName + `, ` + employee.firstName}</Accordion.Header>
->>>>>>> bbfd48e8 (changed accordion header to print employees name)
+            <Accordion activeKey={employee.isOpen ? '0' : undefined}>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header onClick={() => toggleAccordion(employee.id)}>
+                  {employee.lastName + ', ' + employee.firstName}
+                </Accordion.Header>
                 <Accordion.Body>
-                  <ul>
+                  <ul style={{listStyleType: 'none'}}>
                     <li>
                       <Row>
                         <Col>
@@ -126,22 +94,8 @@ export function Delete() {
             </Accordion>
           </Row>
         </Col>
-<<<<<<< HEAD
-        </Container>
-        
-
-        </>
- 
-    );
-}  
- 
-
-
-export default Delete;
-=======
       ))}
     </Container>
   );
 }
 export default Delete;
->>>>>>> bbfd48e8 (changed accordion header to print employees name)
