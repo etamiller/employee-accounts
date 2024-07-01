@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> bbfd48e8 (changed accordion header to print employees name)
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+<<<<<<< HEAD
 import Button from 'react-bootstrap/Button'
 
 
@@ -10,6 +15,11 @@ import Button from 'react-bootstrap/Button'
 
 const initialList1 = [
     {
+=======
+import Button from 'react-bootstrap/Button';
+const initialEmployees = [
+  {
+>>>>>>> bbfd48e8 (changed accordion header to print employees name)
     id: 1,
     firstName: 'John',
     lastName: 'Doe',
@@ -17,11 +27,8 @@ const initialList1 = [
     location: 'Baltimore',
     phone: '1234567890',
     email: 'jdoe@gmail.com'
-    }
-  ];
-
-  const initialList2 = [
-    {
+  },
+  {
     id: 2,
     firstName: 'Sam',
     lastName: 'Smith',
@@ -29,6 +36,7 @@ const initialList1 = [
     location: 'Baltimore',
     phone: '4102345678',
     email: 'ssmith@gmail.com'
+<<<<<<< HEAD
     }
   ];
 
@@ -56,100 +64,69 @@ const initialList1 = [
             <Accordion defaultActiveKey={"0"}>
             <Accordion.Item>
                 <Accordion.Header>Employee #1</Accordion.Header>
+=======
+  }
+];
+export function Delete() {
+  const [employees, setEmployees] = useState(initialEmployees);
+  const removeEmployee = (id) => {
+    const updatedEmployees = employees.filter((emp) => emp.id !== id);
+    setEmployees(updatedEmployees);
+  };
+  return (
+    <Container>
+      {employees.map((employee) => (
+        <Col key={employee.id} style={{ margin: '20px' }}>
+          <Row style={{ margin: '10px' }}>
+            <Accordion defaultActiveKey="0">
+              <Accordion.Item>
+                <Accordion.Header>{employee.lastName + `, ` + employee.firstName}</Accordion.Header>
+>>>>>>> bbfd48e8 (changed accordion header to print employees name)
                 <Accordion.Body>
-                <ul>
-                {list1.map((item) => (
-                <li key={item.id}>
-                    <Col>
-                        <Row>
-                            <Col>
-                            <h6>First Name:</h6>
-                            {item.firstName}
-                            </Col>
-                            <Col>
-                            <h6>Last Name:</h6>
-                            {item.lastName}
-                            </Col>
-                            <Col>
-                            <h6>Location:</h6>
-                            {item.location}
-                            </Col>
-                            <Col>
-                            <h6>Position:</h6>
-                            {item.position}
-                            </Col>
-                            <Col>
-                            <h6>Phone:</h6>
-                            {item.phone}
-                            </Col>
-                            <Col>
-                            <h6>Email:</h6>
-                            {item.email}
-                            </Col>
-                        </Row>
-                        <Row style={{padding: '30px'}}>
-                        <Button type="button" onClick={() => removeEmployee1(item.id)}>
-                        Delete Employee Profile
+                  <ul>
+                    <li>
+                      <Row>
+                        <Col>
+                          <h6>First Name:</h6>
+                          {employee.firstName}
+                        </Col>
+                        <Col>
+                          <h6>Last Name:</h6>
+                          {employee.lastName}
+                        </Col>
+                        <Col>
+                          <h6>Location:</h6>
+                          {employee.location}
+                        </Col>
+                        <Col>
+                          <h6>Position:</h6>
+                          {employee.position}
+                        </Col>
+                        <Col>
+                          <h6>Phone:</h6>
+                          {employee.phone}
+                        </Col>
+                        <Col>
+                          <h6>Email:</h6>
+                          {employee.email}
+                        </Col>
+                      </Row>
+                      <Row style={{ padding: '30px' }}>
+                        <Button
+                          type="button"
+                          onClick={() => removeEmployee(employee.id)}
+                        >
+                          Delete Employee Profile
                         </Button>
-                        </Row>
-                    </Col>
-                </li>
-                ))}
-                </ul>
+                      </Row>
+                    </li>
+                  </ul>
                 </Accordion.Body>
-            </Accordion.Item>
+              </Accordion.Item>
             </Accordion>
-            </Row>
-
-            <Row style={{margin:'10px'}}>
-            <Accordion defaultActiveKey={"0"}>
-            <Accordion.Item style={{listStyleType: 'none'}}>
-                <Accordion.Header>Employee #2</Accordion.Header>
-                <Accordion.Body>
-                <ul>
-                {list2.map((item) => (
-                <li key={item.id}>
-                    <Col>
-                        <Row>
-                            <Col>
-                            <h6>First Name:</h6>
-                            {item.firstName}
-                            </Col>
-                            <Col>
-                            <h6>Last Name:</h6>
-                            {item.lastName}
-                            </Col>
-                            <Col>
-                            <h6>Location:</h6>
-                            {item.location}
-                            </Col>
-                            <Col>
-                            <h6>Position:</h6>
-                            {item.position}
-                            </Col>
-                            <Col>
-                            <h6>Phone:</h6>
-                            {item.phone}
-                            </Col>
-                            <Col>
-                            <h6>Email:</h6>
-                            {item.email}
-                            </Col>
-                        </Row>
-                        <Row style={{padding: '30px'}}>
-                        <Button type="button" onClick={() => removeEmployee2(item.id)}>
-                        Delete Employee Profile
-                        </Button>
-                        </Row>
-                    </Col>
-                </li>
-                ))}
-                </ul>
-                </Accordion.Body>
-            </Accordion.Item>
-            </Accordion>
-            </Row>
+          </Row>
         </Col>
+<<<<<<< HEAD
         </Container>
         
 
@@ -161,3 +138,10 @@ const initialList1 = [
 
 
 export default Delete;
+=======
+      ))}
+    </Container>
+  );
+}
+export default Delete;
+>>>>>>> bbfd48e8 (changed accordion header to print employees name)
