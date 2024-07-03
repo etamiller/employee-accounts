@@ -1,54 +1,48 @@
 import React, { useState } from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Alert from 'react-bootstrap/Alert';
-import Card from 'react-bootstrap/Card';
+import { Form, Row, Col, Button, Alert, Card } from 'react-bootstrap';
+
+const initialFormData = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  address: '',
+  city: '',
+  state: '',
+  zip: '',
+  position: ''
+};
 
 export function Add() {
   const [validated, setValidated] = useState(false);
   const [list, setList] = useState([]);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zip, setZip] = useState('');
-  const [position, setPosition] = useState('');
+  const [formData, setFormData] = useState(initialFormData);
   const [create, setCreate] = useState('No Employee Added');
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     if (form.checkValidity() === false) {
       event.stopPropagation();
+      setValidated(true);
+      return;
     }
 
     setValidated(true);
-
-    if (form.checkValidity()) {
-      updateList();
-    }
+    updateList();
   };
 
   const updateList = () => {
-    const newEmployee = `${firstName} ${lastName}, ${email}, ${phone}, ${address}, ${city}, ${state} ${zip}, ${position}`;
+    const newEmployee = `${formData.firstName} ${formData.lastName}, ${formData.email}, ${formData.phone}, ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}, ${formData.position}`;
     setList([...list, newEmployee]);
 
-    // Reset form fields and feedback
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setPhone('');
-    setAddress('');
-    setCity('');
-    setState('');
-    setZip('');
-    setPosition('');
+    setFormData(initialFormData); // Reset form fields
 
     setCreate('Employee Added');
   };
@@ -56,116 +50,120 @@ export function Add() {
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="my-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom01">
+        <Form.Group as={Col} md="6" controlId="firstName">
           <Form.Label>First name</Form.Label>
           <Form.Control
-            
             type="text"
             placeholder="Mark"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={formData.firstName}
+            onChange={handleChange}
+            
           />
           <Form.Control.Feedback type="invalid">Please enter a first name.</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="6" controlId="validationCustom02">
+        <Form.Group as={Col} md="6" controlId="lastName">
           <Form.Label>Last name</Form.Label>
           <Form.Control
-            
             type="text"
             placeholder="Otto"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={formData.lastName}
+            onChange={handleChange}
+            
           />
           <Form.Control.Feedback type="invalid">Please enter a last name.</Form.Control.Feedback>
         </Form.Group>
       </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} md="5" controlId="validationCustom03">
-          <Form.Label>Address</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="1234 North Street"
-            
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          <Form.Control.Feedback type="invalid">Please provide a valid street address.</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
-          <Form.Label>City</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Baltimore"
-            
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <Form.Control.Feedback type="invalid">Please provide a valid city.</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="2" controlId="validationCustom05">
-          <Form.Label>State</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="MD"
-            
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-          />
-          <Form.Control.Feedback type="invalid">Please provide a valid state.</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="2" controlId="validationCustom06">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="21215"
-            
-            value={zip}
-            onChange={(e) => setZip(e.target.value)}
-          />
-          <Form.Control.Feedback type="invalid">Please provide a valid zip code.</Form.Control.Feedback>
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom07">
-          <Form.Label>Phone number</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="012-345-6789"
-            
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <Form.Control.Feedback type="invalid">Please provide a valid phone number.</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom08">
+      <Row className="my-3">
+        <Form.Group as={Col} md="4" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="text"
             placeholder="markotto@gmail.com"
+            value={formData.email}
+            onChange={handleChange}
             
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
           />
-          <Form.Control.Feedback type="invalid">Please provide a valid email address.</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">Please enter an email address.</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom09">
+        <Form.Group as={Col} md="4" controlId="phone">
+          <Form.Label>Phone number</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="123-456-7890"
+            value={formData.phone}
+            onChange={handleChange}
+            
+          />
+          <Form.Control.Feedback type="invalid">Please enter a phone number.</Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="4" controlId="position">
           <Form.Label>Position</Form.Label>
           <Form.Control
             type="text"
             placeholder="Manager"
+            value={formData.position}
+            onChange={handleChange}
             
-            value={position}
-            onChange={(e) => setPosition(e.target.value)}
           />
-          <Form.Control.Feedback type="invalid">Please provide the employee's position.</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">Please enter a position.</Form.Control.Feedback>
+        </Form.Group>
+      </Row>
+      <Row className="my-3">
+        <Form.Group as={Col} md="5" controlId="address">
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="123 North street"
+            value={formData.address}
+            onChange={handleChange}
+            
+          />
+          <Form.Control.Feedback type="invalid">Please enter a street address.</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group as={Col} md="3" controlId="city">
+          <Form.Label>City</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Baltimore"
+            value={formData.city}
+            onChange={handleChange}
+            
+          />
+          <Form.Control.Feedback type="invalid">Please enter a city.</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group as={Col} md="2" controlId="state">
+          <Form.Label>State</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="MD"
+            value={formData.state}
+            onChange={handleChange}
+            
+          />
+          <Form.Control.Feedback type="invalid">Please enter a state.</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group as={Col} md="2" controlId="zip">
+          <Form.Label>Zip</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="21215"
+            value={formData.zip}
+            onChange={handleChange}
+            
+          />
+          <Form.Control.Feedback type="invalid">Please enter a zip code.</Form.Control.Feedback>
         </Form.Group>
       </Row>
 
+
+      {/* Rest of the form fields here */}
+
       <Button type="submit">Submit Employee Information</Button>
 
-      <Row className="mb-3">
+      <Row className="my-3">
         <Col>
           <Card>
             <Card.Body>
@@ -178,11 +176,13 @@ export function Add() {
         </Col>
       </Row>
 
-      <Row className="mb-3">
+      <Row className="my-3">
         <Col>
           <Alert variant="primary">{create}</Alert>
         </Col>
       </Row>
     </Form>
   );
-}
+};
+
+//export default Add;
