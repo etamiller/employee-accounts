@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Alert, Card } from 'react-bootstrap';
 
@@ -183,6 +184,4 @@ export function Add() {
       </Row>
     </Form>
   );
-};
-
-//export default Add;
+}
