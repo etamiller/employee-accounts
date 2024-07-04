@@ -40,12 +40,20 @@ export function Add() {
   };
 
   const updateList = () => {
-    const newEmployee = `${formData.firstName} ${formData.lastName}, ${formData.email}, ${formData.phone}, ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}, ${formData.position}`;
+    if (formData.firstName !== "" && formData.lastName !== "" && formData.email !== "" && formData.phone !== "" && formData.address !== "" && formData.city !== "" && formData.state !== "" && formData.zip !== "" && formData.position !== "")
+      {
+        const newEmployee = `${formData.firstName} ${formData.lastName}, ${formData.email}, ${formData.phone}, ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}, ${formData.position}`;
     setList([...list, newEmployee]);
 
     setFormData(initialFormData); // Reset form fields
 
     setCreate('Employee Added');
+      }
+      else{
+        setValidated(false)
+        setCreate('No Employee Added, feild(s) missing');
+      }
+    
   };
 
   return (
