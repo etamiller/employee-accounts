@@ -1,0 +1,119 @@
+
+.overlay-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    content: "";
+    position: absolute;
+    top: 30;
+    left: 50px;
+    padding-bottom: 10%;
+    /* padding-top: 10%; Adjust spacing from top as needed */
+    width: 23.33%; 
+    height: 100%;
+    background-color: rgba(6, 69, 36, 0.753);
+    z-index: 2; /* Ensure it's above other content */
+  }
+  
+  .custom-top-margin {
+    margin-top: 96px; /* Adjust as needed for your design */
+}
+  .non-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding-bottom: 10%;
+    top: 40%;
+    right: 10px;
+    left: 450px;
+    width: 50%; 
+    height: 30%;
+    z-index: 2;
+    
+  }
+
+  .white-text{
+    color:white;
+  }
+
+  .non-overlay-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding-bottom: 10%;
+    top: 75%;
+    right: 10px;
+    left: 450px;
+    width: 50%; 
+    height: 30%;
+    z-index: 3;
+    
+  }
+
+  .non-overlay-lowest{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding-bottom: 10%;
+    justify-content: space-between;
+    top: 45%;
+    right: 10px;
+    left: 180px;
+    width: 55%; 
+    height: 30%;
+    z-index: 3;
+    
+  }
+
+  .within-overlay{
+    position: absolute;
+    display: flex;
+    left: 50px;
+    top: 120px;
+    width: 23.33%; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  h2 {
+    justify-content: left;
+  }
+
+  #dropdown-employees{
+    background-color: rgb(14, 14, 95);
+    outline: none;
+  }
+  
+  .background-image {
+    background-image: url('../navy-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100vh; /* Adjust as needed */
+  }
+
+  .employee-image {
+    background-image: url('../profile.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh; /* Adjust as needed */
+  }
+  .update-wrapper {
+    position: relative;
+}
+
+
+.background-image-bottom {
+    /* Add styles for the bottom image section */
+    margin-top: 24px; /* Example margin for separation from content */
+    padding-top: 24px; /* Example padding for spacing */
+}
+
+
