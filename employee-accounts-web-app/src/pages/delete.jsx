@@ -87,7 +87,7 @@ export const Delete = () => {
   return (
     <div className="background-image">
       <Alert style={{ boxShadow: '0 30px 20px 10px #152235', borderRadius: '0', backgroundColor: 'white', borderTop: '5px solid', borderBottom: '5px solid', color: '#5D9D67', borderColor: '#5D9D67', opacity: '90%' }}>
-        <h1 style={{ opacity: "100%", textShadow: '1px 1px 2px #152235', fontSize: '40px', fontWeight: 'bold', fontFamily: 'Times-New-Roman', letterSpacing: '100px', textTransform: 'uppercase' }}>Delete An Employee Account</h1>
+        <h1 style={{ opacity: "100%", textShadow: '1px 1px 2px #152235', fontSize: '40px', fontWeight: 'bold', fontFamily: 'Times-New-Roman', letterSpacing: '10%', textTransform: 'uppercase' }}>Delete An Employee Account</h1>
       </Alert>
 
       <Container>
