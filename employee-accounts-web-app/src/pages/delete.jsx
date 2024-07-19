@@ -8,17 +8,10 @@ import Alert from 'react-bootstrap/Alert';
 
 export const Delete = () => {
   const [employees, setEmployees] = useState([]);
-  const [domContentLoaded, setDomContentLoaded] = useState(false);
 
   useEffect(() => {
-    document.addEventListener('DOMContentLoaded', () => {
-      setDomContentLoaded(true);
-    });
-
-    if (domContentLoaded) {
-      fetchData(); // Fetch data when DOM content is loaded
-    }
-  }, [domContentLoaded]);
+    fetchData(); // Fetch data when component mounts
+  }, []);
 
   const fetchData = async () => {
     try {
@@ -83,7 +76,7 @@ export const Delete = () => {
     }
   };
 
-  return domContentLoaded ? (
+  return (
     <div className="background-image">
       <Alert style={{ boxShadow: '0 30px 20px 10px #152235', borderRadius: '0', backgroundColor: 'white', borderTop: '5px solid', borderBottom: '5px solid', color: '#5D9D67', borderColor: '#5D9D67', opacity: '90%' }}>
         <h1 style={{ opacity: "100%", textShadow: '1px 1px 2px #152235', fontSize: '40px', fontWeight: 'bold', fontFamily: 'Times-New-Roman', letterSpacing: '10%', textTransform: 'uppercase' }}>Delete An Employee Account</h1>
@@ -146,7 +139,7 @@ export const Delete = () => {
         ))}
       </Container>
     </div>
-  ) : null;
+  );
 }
 
 export default Delete;
