@@ -69,7 +69,7 @@ export const Delete = () => {
   const toggleAccordion = (id) => {
     const updatedEmployees = employees.map((emp) => ({
       ...emp,
-      isOpen: emp.id === id ? !emp.isOpen : emp.isOpen
+      isOpen: emp.id === id ? !emp.isOpen : false // Close all accordions except the one being toggled
     }));
     setEmployees(updatedEmployees);
   };
