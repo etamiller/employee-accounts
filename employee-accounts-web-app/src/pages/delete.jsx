@@ -25,7 +25,12 @@ export const Delete = () => {
         firstName: emp['First Name'],
         lastName: emp.pk,
         position: emp.Position,
-        location: `${emp.Address}\n${emp.City}, ${emp.State} ${emp.Zip}`,
+        location: (
+          <div>
+            {emp.Address}<br />
+            {emp.City}, {emp.State} {emp.Zip}
+          </div>
+        ),
         phone: emp.Phone,
         email: emp.Email,
         isOpen: false
