@@ -16,7 +16,7 @@ export const Delete = () => {
 
   const fetchData = async () => {
     try {
-      // Replace 'https://api.example.com/employees' with your actual API endpoint that fetches data from DynamoDB
+
       const response = await fetch('https://zx814esxf6.execute-api.us-east-1.amazonaws.com/default/getAllEmployeeAccounts');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
@@ -28,7 +28,7 @@ export const Delete = () => {
         firstName: emp['First Name'], // Accessing attributes using bracket notation due to spaces in attribute names
         lastName: emp.pk,
         position: emp.Position,
-        location: `${emp.Address} ${emp.City}, ${emp.State} ${emp.Zip}`,
+        location: `${emp.Address}\n${emp.City}, ${emp.State} ${emp.Zip}`,
         phone: emp.Phone,
         email: emp.Email,
         isOpen: false // Initialize isOpen for accordion state
@@ -96,9 +96,13 @@ export const Delete = () => {
             <Row style={{ margin: '10px' }}>
               <Accordion activeKey={employee.isOpen ? '0' : undefined}>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header className="accordion-header" onClick={() => toggleAccordion(employee.id)}>
+                  {/* <Accordion.Header className="accordion-header"  onClick={() => toggleAccordion(employee.id)}> */}
+                  {/* {employee.lastName + ', ' + employee.firstName}
+                  </Accordion.Header> */}
+                  <Accordion.Header style={{ '--bs-accordion-active-bg': '#97a8ba', '--bs-accordion-btn-focus-box-shadow': 'none' }} className="accordion-header" onClick={() => toggleAccordion(employee.id)}>
                     {employee.lastName + ', ' + employee.firstName}
                   </Accordion.Header>
+
                   <Accordion.Body>
                     <ul style={{ listStyleType: 'none' }}>
                       <li>
